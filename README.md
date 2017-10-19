@@ -1,3 +1,3 @@
-# angular4-fusioncharts
+# Angular4 FusionCharts
 
-ada
+Provides Angular component for FusionCharts charting library.
