@@ -7,13 +7,13 @@ A simple and lightweight Angular4 component which provides bindings for FusionCh
 
 ## Installation
 
-To install `Angular4-FusionCharts` library, run:
+To install `Angular4-FusionCharts`, run:
 
 ```bash
 $ npm install angular4-fusioncharts --save
 ```
 
-Also install `FusionCharts` library if it is not already installed:
+Also install `FusionCharts`, if it is not already installed:
 
 ```bash
 $ npm install fusioncharts --save

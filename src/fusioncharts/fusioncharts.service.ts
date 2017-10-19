@@ -2,7 +2,6 @@
 import { Injectable } from '@angular/core';
 import { FusionChartsCoreService } from './fusioncharts.core.service';
 
-
 @Injectable()
 export class FusionChartsService {
     private resolvedFusionChartsCore: any;
