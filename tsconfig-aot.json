@@ -35,6 +35,6 @@
     ],
     "angularCompilerOptions": {
         "strictMetadataEmit": true,
-        "genDir": "./dist"
+        "genDir": "./tmp"
     }
 }
