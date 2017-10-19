@@ -1,3 +1,3 @@
-# Angular4 FusionCharts
+# Angular4-Fusioncharts
 
-Provides Angular component for FusionCharts charting library.
+A simple and lightweight Angular4 component which provides bindings for FusionCharts JavaScript Charting Library. It easily adds rich and interactive charting to any Angular Projects.
