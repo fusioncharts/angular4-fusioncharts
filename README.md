@@ -143,4 +143,4 @@ To build, run:
 $ npm run build
 ```
 
-### [Demos and Documentation](https://fusioncharts.github.io/angular4-fusioncharts/)
+### [Demos and Documentation](https://fusioncharts.github.io/angular4-fusioncharts/) 
