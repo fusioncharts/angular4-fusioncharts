@@ -6,10 +6,10 @@ import { Component } from '@angular/core';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    id: any = 'chart1';
-    width: any = 600;
-    height: any = 400;
-    type: any = 'column2d';
+    id = 'chart1';
+    width = 600;
+    height = 400;
+    type = 'column2d';
     dataFormat;
     dataSource;
     chartConfig;
