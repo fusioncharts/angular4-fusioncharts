@@ -29,9 +29,16 @@
             "name": "Rousan Ali",
             "email": "rousan@fusioncharts.com",
             "url": "https://github.com/ariyankhan"
+        },
+        {
+            "name": "Subrata Mal",
+            "email": "subrata@fusioncharts.com",
+            "url": "https://github.com/subratamal"
         }
     ],
-    "main": "./dist/index.js",
+    "main": "dist/dist/index.umd.js",
+    "module": "dist/index.js",
+    "typings": "dist/ndex.d.ts",
     "bugs": {
         "url": "https://github.com/fusioncharts/angular4-fusioncharts/issues"
     },
@@ -43,7 +50,6 @@
         "chart",
         "angular2"
     ],
-    "private": true,
     "dependencies": {
         "@angular/animations": "^4.2.4",
         "@angular/common": "^4.2.4",

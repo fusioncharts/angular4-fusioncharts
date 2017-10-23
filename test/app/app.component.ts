@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnDestroy {
+    title = 'Angular4-FusionCharts Wrapper';
     id = 'chart1';
     width = 600;
     height = 400;
@@ -50,6 +51,10 @@ export class AppComponent {
         <set label="Basketball" value="400000000" tooltext="Popular in: {br}US{br}Canada" />
         <set label="American football" value="390000000" tooltext="Popular in:{br}US" />
     </chart>`;
+    }
+
+    ngOnDestroy() {
+
     }
 
 }
