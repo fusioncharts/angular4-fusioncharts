@@ -1,2 +1,3 @@
 # Don't push source code to npm
 /src
+/index.ts

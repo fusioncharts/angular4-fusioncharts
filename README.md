@@ -124,6 +124,18 @@ Now, You can use `<fusioncharts>` component in your `app.component.html` templat
 ></fusioncharts>
 ```
 
+## Unit Test
+
+```sh
+$ npm test
+```
+
+## End-2-End Test
+
+```sh
+$ npm run e2e
+```
+
 ## Contributing
 
 * Clone the repository.

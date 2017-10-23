@@ -16,9 +16,8 @@
         "start": "ng serve",
         "transpile": "ngc -p tsconfig-aot.json",
         "package": "rollup -c",
-        "test-build": "ng build",
         "minify": "uglifyjs dist/dist/index.umd.js --screw-ie8 --compress --mangle --comments --output dist/dist/index.umd.min.js",
-        "build": "rm -rf dist/ && npm run transpile && npm run package && npm run minify && cp package-dist.json dist/package.json && npm run test-build"
+        "build": "rm -rf dist/ && npm run transpile && npm run package && npm run minify"
     },
     "author": {
         "name": "FusionCharts",
@@ -38,7 +37,7 @@
     ],
     "main": "dist/dist/index.umd.js",
     "module": "dist/index.js",
-    "typings": "dist/ndex.d.ts",
+    "typings": "dist/index.d.ts",
     "bugs": {
         "url": "https://github.com/fusioncharts/angular4-fusioncharts/issues"
     },
