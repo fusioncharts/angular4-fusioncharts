@@ -108,7 +108,7 @@ export class AppComponent {
 }
 ```
 
-You can now use `fusioncharts` component in your `app.component.html` template:
+Now, You can use `<fusioncharts>` component in your `app.component.html` template:
 
 ```html
 <h1>

@@ -1,6 +1,6 @@
 {
     "name": "angular4-fusioncharts",
-    "version": "1.0.0",
+    "version": "1.0.0-rc.1",
     "description": "A simple and lightweight Angular4 component which provides bindings for FusionCharts JavaScript Charting Library",
     "license": "MIT",
     "repository": {
@@ -25,7 +25,9 @@
         "angular",
         "angular4",
         "fusioncharts",
-        "wrapper"
+        "wrapper",
+        "chart",
+        "angular2"
     ],
     "main": "dist/index.umd.js",
     "module": "index.js",
