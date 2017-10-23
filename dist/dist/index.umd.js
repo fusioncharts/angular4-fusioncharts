@@ -37,6 +37,10 @@ var FusionChartsService = (function () {
         modules.forEach(function (module) {
             module(_this.resolvedFusionChartsCore);
         });
+        // Fix the black pie-chart rendering in Safari browser.
+        if (this.resolvedFusionChartsCore.options) {
+            this.resolvedFusionChartsCore.options.SVGDefinitionURL = 'absolute';
+        }
     };
     FusionChartsService.prototype.getResolvedFusionChartsCore = function () {
         return this.resolvedFusionChartsCore;
