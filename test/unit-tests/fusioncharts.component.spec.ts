@@ -3,7 +3,7 @@ import * as FusionCharts from 'fusioncharts';
 import * as Charts from 'fusioncharts/fusioncharts.charts';
 import * as FintTheme from 'fusioncharts/themes/fusioncharts.theme.fint';
 import { FusionChartsModule, FusionChartsComponent } from '../../index';
-import testData from './test-data';
+import sampleData from './data';
 
 describe('FusionChartsComponent', () => {
     beforeEach(async(() => {
