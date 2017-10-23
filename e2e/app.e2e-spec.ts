@@ -8,12 +8,11 @@ describe('Angular4-Fusioncharts Sample App', () => {
 
     it(`should display wrapper title 'Angular4-FusionCharts Wrapper'`, () => {
         page.navigateTo();
-        expect(page.getParagraphText()).toEqual('Angular4-FusionCharts Wrapper');
+        expect(page.getSampleChartHeading()).toEqual('Angular4-FusionCharts Wrapper');
     });
 
     it(`should display a sample chart using Angular4-FusionCharts wrapper`, () => {
         page.navigateTo();
-        console.log(page.getChartElement());
-        expect(page.getChartElement()).toEqual('fusioncharts');
+        expect(page.getChartElement().getTagName()).toEqual('fusioncharts');
     });
 });
