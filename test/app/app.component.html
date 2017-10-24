@@ -1,0 +1,20 @@
+<div>
+
+    <h1>{{ title }}</h1>
+
+    <fusioncharts
+        [id]="id"
+        [width]="width"
+        [height]="height"
+        [type]="type"
+        [dataFormat]="dataFormat"
+        [dataSource]="dataSource"
+        [events]="events"
+        [chartConfig]="chartConfig">
+    </fusioncharts>
+
+    <p>Actual Value: {{ actualValue }}</p>
+
+    <button (click)="onClick($event)">Change Chart Data</button>
+
+</div>
