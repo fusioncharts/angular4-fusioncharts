@@ -3,17 +3,17 @@
 
 # Angular4-Fusioncharts
 
-A simple and lightweight Angular4 component which provides bindings for FusionCharts JavaScript Charting Library. It easily adds rich and interactive charts to any Angular Projects.
+A simple and lightweight Angular 4 component which provides bindings for FusionCharts JavaScript Charting Library. It easily adds rich and interactive charts to any Angular Projects.
 
 ## Installation
 
-To install `Angular4-FusionCharts`, run:
+To install `angular4-fusioncharts`, run:
 
 ```bash
 $ npm install angular4-fusioncharts --save
 ```
 
-Also install `FusionCharts`, if it is not already installed:
+Also install `fusionCharts`, if it is not already installed:
 
 ```bash
 $ npm install fusioncharts --save
@@ -128,6 +128,10 @@ Now, You can use `<fusioncharts>` component in your `app.component.html` templat
 
 ```sh
 $ npm test
+
+$ npm test:unit
+
+$ npm test:e2e
 ```
 
 ## Contributing
@@ -143,7 +147,20 @@ $ cd angular4-fusioncharts
 $ npm i
 $ npm start
 ```
-To build, run:
+
+To generate all *.js, *.d.ts and *.js.map files:
+
+```sh
+$ npm run transpile
+```
+
+To lint all *.ts files:
+
+```sh
+$ npm run lint
+```
+
+To build, packaging and minify, run:
 
 ```sh
 $ npm run build
