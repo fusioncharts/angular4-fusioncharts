@@ -1,0 +1,17 @@
+{
+  "name": "angular4-fc",
+  "logo": "wrapper/logo.png",
+  "heading": "Angular4-FusionCharts",
+  "subHeading": "Simple and effective Angular 4 bindings for FusionCharts JavaScript Charting Library",
+  "about": "A simple and lightweight Angular 4 component which provides bindings for FusionCharts JavaScript Charting Library. It easily adds rich and interactive charts to any Angular Projects.",
+  "features": [
+    "Adds a chart using just a single angular component.",
+    "Auto-updates the chart object on modifying component properties.",
+    "Adds a chart from a JSON URL, from a XML URL, or using component props binding.",
+    "Allows you to enable interactivity between Javascript charts.",
+    "Offers advanced control by giving you access to the complete FusionCharts object (containing the chart configuration)."
+  ],
+  "githubRepo": "https://github.com/fusioncharts/angular4-fusioncharts",
+  "issuesURL": "https://github.com/fusioncharts/angular4-fusioncharts/issues",
+  "newIssueURL": "https://github.com/fusioncharts/angular4-fusioncharts/issues/new"
+}

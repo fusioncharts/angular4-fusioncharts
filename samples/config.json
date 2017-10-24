@@ -1,0 +1,129 @@
+{
+  "sampleRouteMapping": {
+    "1": "simple-column-chart",
+    "2": "3d-pie-chart",
+    "3": "column-area-line-combi-chart",
+    "4": "fetch-data-from-json-url",
+    "5": "fetch-data-from-xml-url",
+    "6": "update-chart-data",
+    "7": "update-chart-attributes",
+    "8": "client-side-exporting",
+    "9": "change-chart-type-runtime",
+    "10": "trigger-events-from-chart",
+    "11": "use-annotations",
+    "12": "render-fusionmaps"
+  },
+  "wrapperSampleMapping": {
+    "angular4-fc": []
+  },
+  "sampleProps": {
+    "1": {
+      "title": "A Simple Column Chart",
+      "data": "data.json",
+      "logo": "logo.svg",
+      "logoHover": "logo-hover.svg",
+      "interactiveViewURL": {
+        "angular4-fc": "https://embed.plnkr.co/qzww7jEtThtlMNOQG6mH/"
+      }
+    },
+    "2": {
+      "title": "A 3D Pie Chart",
+      "data": "data.json",
+      "logo": "logo.svg",
+      "logoHover": "logo-hover.svg",
+      "interactiveViewURL": {
+        "angular4-fc": "https://embed.plnkr.co/cvry34nwcXeDKrGRGWkf/"
+      }
+    },
+    "3": {
+      "title": "A Column, Area and Line Combi Chart",
+      "data": "data.json",
+      "logo": "logo.svg",
+      "logoHover": "logo-hover.svg",
+      "interactiveViewURL": {
+        "angular4-fc": "https://embed.plnkr.co/TPEVP7pjrcmU575yEAug/"
+      }
+    },
+    "4": {
+      "title": "Fetch data from JSON URL",
+      "data": "data.json",
+      "logo": "logo.svg",
+      "logoHover": "logo-hover.svg",
+      "interactiveViewURL": {
+        "angular4-fc": "https://embed.plnkr.co/vhucQGMBSnJUm5sm1ITg/"
+      }
+    },
+    "5": {
+      "title": "Fetch data from XML URL",
+      "data": "data.xml",
+      "logo": "logo.svg",
+      "logoHover": "logo-hover.svg",
+      "interactiveViewURL": {
+        "angular4-fc": "https://embed.plnkr.co/LHffV5VUXVIpMWQbclsV/"
+      }
+    },
+    "6": {
+      "title": "Update chart data",
+      "data": "data.json",
+      "logo": "logo.svg",
+      "logoHover": "logo-hover.svg",
+      "interactiveViewURL": {
+        "angular4-fc": "https://embed.plnkr.co/j261RVlYewmKcjo76YAu/"
+      }
+    },
+    "7": {
+      "title": "Update chart attributes",
+      "data": "data.json",
+      "logo": "logo.svg",
+      "logoHover": "logo-hover.svg",
+      "interactiveViewURL": {
+        "angular4-fc": "https://embed.plnkr.co/1DeiBUWBfXgXGfwq5Z58/"
+      }
+    },
+    "8": {
+      "title": "Client side exporting",
+      "data": "data.json",
+      "logo": "logo.svg",
+      "logoHover": "logo-hover.svg",
+      "interactiveViewURL": {
+        "angular4-fc": "https://embed.plnkr.co/YvLPxgTQZY9Tf0tDOSIJ/"
+      }
+    },
+    "9": {
+      "title": "Change chart type at runtime",
+      "data": "data.json",
+      "logo": "logo.svg",
+      "logoHover": "logo-hover.svg",
+      "interactiveViewURL": {
+        "angular4-fc": "https://embed.plnkr.co/vePN2qNglSic9n7M8bh2/"
+      }
+    },
+    "10": {
+      "title": "Trigger events from chart",
+      "data": "data.json",
+      "logo": "logo.svg",
+      "logoHover": "logo-hover.svg",
+      "interactiveViewURL": {
+        "angular4-fc": "https://embed.plnkr.co/QxYcOOsUl7SmTl5NVekB/"
+      }
+    },
+    "11": {
+      "title": "Use annotations",
+      "data": "data.json",
+      "logo": "logo.svg",
+      "logoHover": "logo-hover.svg",
+      "interactiveViewURL": {
+        "angular4-fc": "https://embed.plnkr.co/CFuDLJ6uGQULTY5Z4H9I/"
+      }
+    },
+    "12": {
+      "title": "Render FusionMaps",
+      "data": "data.json",
+      "logo": "logo.svg",
+      "logoHover": "logo-hover.svg",
+      "interactiveViewURL": {
+        "angular4-fc": "https://embed.plnkr.co/bYlAbLJGWTR72mGGcxzW/"
+      }
+    }
+  }
+}
