@@ -127,11 +127,11 @@ Now, You can use `<fusioncharts>` component in your `app.component.html` templat
 ## Test
 
 ```sh
-$ npm test
+$ npm run test
 
-$ npm test:unit
+$ npm run test:unit
 
-$ npm test:e2e
+$ npm run test:e2e
 ```
 
 ## Contributing
