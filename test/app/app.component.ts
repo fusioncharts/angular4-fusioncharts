@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+    title = 'Angular4-FusionCharts Wrapper';
     id = 'chart1';
     width = 600;
     height = 400;

@@ -1,87 +1,96 @@
 {
-    "name": "angular4-fusioncharts",
-    "version": "1.0.0-rc.1",
-    "description": "A simple and lightweight Angular4 component which provides bindings for FusionCharts JavaScript Charting Library",
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/fusioncharts/angular4-fusioncharts"
+  "name": "angular4-fusioncharts",
+  "version": "1.0.0-rc.1",
+  "description": "A simple and lightweight Angular 4 component which provides bindings for FusionCharts JavaScript Charting Library",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fusioncharts/angular4-fusioncharts"
+  },
+  "scripts": {
+    "ng": "ng",
+    "test:e2e": "ng e2e",
+    "test:unit": "ng test",
+    "test": "ng e2e && ng test",
+    "lint": "ng lint",
+    "start": "ng serve",
+    "transpile": "ngc -p tsconfig-aot.json",
+    "package": "rollup -c",
+    "minify": "uglifyjs dist/dist/index.umd.js --screw-ie8 --compress --mangle --comments --output dist/dist/index.umd.min.js",
+    "build": "rm -rf dist/ && npm run transpile && npm run package && npm run minify"
+  },
+  "author": {
+    "name": "FusionCharts",
+    "email": "support@fusioncharts.com"
+  },
+  "contributors": [
+    {
+      "name": "Rousan Ali",
+      "email": "rousan@fusioncharts.com",
+      "url": "https://github.com/ariyankhan"
     },
-    "scripts": {
-        "tsc": "tsc",
-        "ng": "ng",
-        "test": "ng test",
-        "lint": "ng lint",
-        "e2e": "ng e2e",
-        "start": "ng serve",
-        "transpile": "ngc -p tsconfig-aot.json",
-        "package": "rollup -c",
-        "test-build": "ng build",
-        "minify": "uglifyjs dist/dist/index.umd.js --screw-ie8 --compress --mangle --comments --output dist/dist/index.umd.min.js",
-        "build": "rm -rf dist/ && npm run transpile && npm run package && npm run minify && cp package-dist.json dist/package.json && npm run test-build"
-    },
-    "author": {
-        "name": "FusionCharts",
-        "email": "support@fusioncharts.com"
-    },
-    "contributors": [
-        {
-            "name": "Rousan Ali",
-            "email": "rousan@fusioncharts.com",
-            "url": "https://github.com/ariyankhan"
-        }
-    ],
-    "main": "./dist/index.js",
-    "bugs": {
-        "url": "https://github.com/fusioncharts/angular4-fusioncharts/issues"
-    },
-    "keywords": [
-        "angular",
-        "angular4",
-        "fusioncharts",
-        "wrapper",
-        "chart",
-        "angular2"
-    ],
-    "private": true,
-    "dependencies": {
-        "@angular/animations": "^4.2.4",
-        "@angular/common": "^4.2.4",
-        "@angular/compiler": "^4.2.4",
-        "@angular/core": "^4.2.4",
-        "@angular/forms": "^4.2.4",
-        "@angular/http": "^4.2.4",
-        "@angular/platform-browser": "^4.2.4",
-        "@angular/platform-browser-dynamic": "^4.2.4",
-        "@angular/router": "^4.2.4",
-        "core-js": "^2.4.1",
-        "fusioncharts": "^3.12.2",
-        "rxjs": "^5.4.2",
-        "zone.js": "^0.8.14"
-    },
-    "devDependencies": {
-        "@angular/cli": "1.4.7",
-        "@angular/compiler-cli": "^4.2.4",
-        "@angular/language-service": "^4.2.4",
-        "@types/jasmine": "~2.5.53",
-        "@types/jasminewd2": "~2.0.2",
-        "@types/node": "~6.0.60",
-        "codelyzer": "~3.2.0",
-        "enhanced-resolve": "^3.4.1",
-        "http-server": "^0.10.0",
-        "jasmine-core": "~2.6.2",
-        "jasmine-spec-reporter": "~4.1.0",
-        "karma": "~1.7.0",
-        "karma-chrome-launcher": "~2.1.1",
-        "karma-cli": "~1.0.1",
-        "karma-coverage-istanbul-reporter": "^1.2.1",
-        "karma-jasmine": "~1.1.0",
-        "karma-jasmine-html-reporter": "^0.2.2",
-        "protractor": "~5.1.2",
-        "rollup": "^0.50.0",
-        "ts-node": "~3.2.0",
-        "tslint": "~5.7.0",
-        "typescript": "~2.3.3",
-        "uglify-js": "^3.1.4"
+    {
+      "name": "Subrata Mal",
+      "email": "subrata@fusioncharts.com",
+      "url": "https://github.com/subratamal"
     }
+  ],
+  "main": "dist/dist/index.umd.js",
+  "module": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "bugs": {
+    "url": "https://github.com/fusioncharts/angular4-fusioncharts/issues"
+  },
+  "keywords": [
+    "angular",
+    "angular4",
+    "fusioncharts",
+    "wrapper",
+    "chart",
+    "angular2"
+  ],
+  "dependencies": {
+    "@angular/animations": "^4.2.4",
+    "@angular/common": "^4.2.4",
+    "@angular/compiler": "^4.2.4",
+    "@angular/core": "^4.2.4",
+    "@angular/forms": "^4.2.4",
+    "@angular/http": "^4.2.4",
+    "@angular/platform-browser": "^4.2.4",
+    "@angular/platform-browser-dynamic": "^4.2.4",
+    "@angular/router": "^4.2.4",
+    "core-js": "^2.4.1",
+    "fusioncharts": "^3.12.2",
+    "rxjs": "^5.4.2",
+    "zone.js": "^0.8.14"
+  },
+  "devDependencies": {
+    "@angular/cli": "1.4.7",
+    "@angular/compiler-cli": "^4.2.4",
+    "@angular/language-service": "^4.2.4",
+    "@types/jasmine": "~2.5.53",
+    "@types/jasminewd2": "~2.0.2",
+    "@types/node": "~6.0.60",
+    "codelyzer": "~3.2.0",
+    "enhanced-resolve": "^3.4.1",
+    "http-server": "^0.10.0",
+    "jasmine-core": "~2.6.2",
+    "jasmine-spec-reporter": "~4.1.0",
+    "karma": "~1.7.0",
+    "karma-chrome-launcher": "~2.1.1",
+    "karma-cli": "~1.0.1",
+    "karma-coverage": "^1.1.1",
+    "karma-coverage-istanbul-reporter": "^1.2.1",
+    "karma-firefox-launcher": "^1.0.1",
+    "karma-ie-launcher": "^1.0.0",
+    "karma-jasmine": "~1.1.0",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "karma-safari-launcher": "^1.0.0",
+    "protractor": "~5.1.2",
+    "rollup": "^0.50.0",
+    "ts-node": "~3.2.0",
+    "tslint": "~5.7.0",
+    "typescript": "~2.3.3",
+    "uglify-js": "^3.1.4"
+  }
 }

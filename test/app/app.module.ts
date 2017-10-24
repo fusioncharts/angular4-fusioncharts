@@ -9,7 +9,7 @@ import {
     FusionChartsComponent,
     FusionChartsService,
     FusionChartsCoreService
-} from '../../index';
+} from '../../dist';
 
 @NgModule({
     declarations: [

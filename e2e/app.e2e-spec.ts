@@ -1,14 +1,18 @@
 import { AppPage } from './app.po';
 
-describe('angular4-fusioncharts App', () => {
+describe('Angular4-Fusioncharts Sample App', () => {
     let page: AppPage;
-
     beforeEach(() => {
         page = new AppPage();
     });
 
-    it('should display welcome message', () => {
+    it(`should display wrapper title 'Angular4-FusionCharts Wrapper'`, () => {
         page.navigateTo();
-        expect(page.getParagraphText()).toEqual('Welcome to app!');
+        expect(page.getSampleChartHeading()).toEqual('Angular4-FusionCharts Wrapper');
+    });
+
+    it(`should display a sample chart using Angular4-FusionCharts wrapper`, () => {
+        page.navigateTo();
+        expect(page.getChartElement().getTagName()).toEqual('fusioncharts');
     });
 });
