@@ -1,14 +1,13 @@
 {
   "name": "angular4-fusioncharts",
   "version": "1.0.0-rc.1",
-  "description": "A simple and lightweight Angular4 component which provides bindings for FusionCharts JavaScript Charting Library",
+  "description": "A simple and lightweight Angular 4 component which provides bindings for FusionCharts JavaScript Charting Library",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/fusioncharts/angular4-fusioncharts"
   },
   "scripts": {
-    "tsc": "tsc",
     "ng": "ng",
     "test:e2e": "ng e2e",
     "test:unit": "ng test",

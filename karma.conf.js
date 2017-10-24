@@ -19,8 +19,7 @@ module.exports = function (config) {
             clearContext: false // leave Jasmine Spec Runner output visible in browser
         },
         coverageReporter: {
-            type: 'text',
-            dir: 'coverage/'
+            type: 'text'
         },
         angularCli: {
             environment: 'dev'
