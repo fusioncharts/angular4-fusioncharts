@@ -31,12 +31,7 @@ import * as Charts from 'fusioncharts/fusioncharts.charts';
 import * as FintTheme from 'fusioncharts/themes/fusioncharts.theme.fint';
 
 import { AppComponent } from './app.component';
-import {
-    FusionChartsModule,
-    FusionChartsComponent,
-    FusionChartsService,
-    FusionChartsCoreService
-} from 'angular4-fusioncharts';
+import { FusionChartsModule } from 'angular4-fusioncharts';
 
 @NgModule({
     declarations: [
