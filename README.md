@@ -160,7 +160,7 @@ To lint all *.ts files:
 $ npm run lint
 ```
 
-To build, packaging and minify, run:
+To build, run:
 
 ```sh
 $ npm run build
