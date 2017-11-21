@@ -1,9 +1,10 @@
 import { FusionChartsCoreService } from './fusioncharts.core.service';
 export declare class FusionChartsService {
     private fusionChartsCoreService;
-    private resolvedFusionChartsCore;
+    private static resolvedFusionChartsCore;
+    static getResolvedFusionChartsCore(): any;
+    static isFusionChartsCoreResolved(): boolean;
+    static resolveFusionChartsCore(core: any, modules: any[]): void;
     constructor(fusionChartsCoreService: FusionChartsCoreService);
-    _resolveFusionChartsCore(): void;
-    getResolvedFusionChartsCore(): any;
     newFusionChartsInstance(chartConfig: any): any;
 }

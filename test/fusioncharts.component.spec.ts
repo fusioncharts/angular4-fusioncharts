@@ -2,7 +2,7 @@ import { TestBed, async } from '@angular/core/testing';
 import * as FusionCharts from 'fusioncharts';
 import * as Charts from 'fusioncharts/fusioncharts.charts';
 import * as FintTheme from 'fusioncharts/themes/fusioncharts.theme.fint';
-import { FusionChartsModule, FusionChartsComponent } from '../dist';
+import { FusionChartsModule, FusionChartsComponent, FusionChartsService } from '../dist';
 import sampleData from './data';
 
 describe('FusionChartsComponent', () => {
@@ -43,15 +43,11 @@ describe('FusionChartsComponent', () => {
         const fcCom = fixture.debugElement.componentInstance;
         feedFCComponent(fcCom);
         fixture.detectChanges();
-       expect(FusionCharts.items['chart1'] === fcCom.chartObj).toBeTruthy();
+        expect(FusionCharts.items['chart1'] === fcCom.chartObj).toBeTruthy();
     }));
 
     it(`should resolve FusionCharts core module`, async(() => {
-        const fixture = TestBed.createComponent(FusionChartsComponent);
-        const fcCom = fixture.debugElement.componentInstance;
-        feedFCComponent(fcCom);
-        fixture.detectChanges();
-       expect(FusionCharts === fcCom.fusionChartsService.getResolvedFusionChartsCore()).toBeTruthy();
+        expect(FusionCharts === FusionChartsService.getResolvedFusionChartsCore()).toBeTruthy();
     }));
 });
 
