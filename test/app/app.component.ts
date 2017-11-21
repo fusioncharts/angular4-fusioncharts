@@ -30,7 +30,7 @@ export class AppComponent {
         };
     }
 
-    onClick() {
+    onClick(e) {
         this.dataFormat = 'xml';
         this.dataSource = `<chart caption="Top 10 Most Popular Sports in the World"
         subcaption="Based on number of viewers" yaxisname="Number of Viewers" plotgradientcolor=""

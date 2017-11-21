@@ -18,38 +18,41 @@ FusionChartsCoreService.ctorParameters = function () { return []; };
 var FusionChartsService = (function () {
     function FusionChartsService(fusionChartsCoreService) {
         this.fusionChartsCoreService = fusionChartsCoreService;
-        this._resolveFusionChartsCore();
-    }
-    FusionChartsService.prototype._resolveFusionChartsCore = function () {
-        var _this = this;
-        if (this.resolvedFusionChartsCore) {
-            return;
+        if (!FusionChartsService.isFusionChartsCoreResolved()) {
+            FusionChartsService.resolveFusionChartsCore(fusionChartsCoreService.core, fusionChartsCoreService.modules);
         }
-        var core$$1 = this.fusionChartsCoreService.core;
-        var modules = this.fusionChartsCoreService.modules;
-        if (core$$1.getCurrentRenderer && core$$1.getCurrentRenderer() === 'javascript') {
-            this.resolvedFusionChartsCore = core$$1;
+    }
+    FusionChartsService.getResolvedFusionChartsCore = function () {
+        return FusionChartsService.resolvedFusionChartsCore;
+    };
+    FusionChartsService.isFusionChartsCoreResolved = function () {
+        return !!FusionChartsService.resolvedFusionChartsCore;
+    };
+    FusionChartsService.resolveFusionChartsCore = function (core$$1, modules) {
+        var resolvedCore;
+        if (core$$1 && core$$1.getCurrentRenderer && core$$1.getCurrentRenderer() === 'javascript') {
+            resolvedCore = core$$1;
         }
         else {
             // Otherwise the core should be a factory that provides the fc core.
-            this.resolvedFusionChartsCore = core$$1();
+            resolvedCore = core$$1();
         }
         modules.forEach(function (module) {
-            module(_this.resolvedFusionChartsCore);
+            module(resolvedCore);
         });
         // Fix the black pie-chart rendering in Safari browser.
-        if (this.resolvedFusionChartsCore.options) {
-            this.resolvedFusionChartsCore.options.SVGDefinitionURL = 'absolute';
+        if (resolvedCore.options) {
+            resolvedCore.options.SVGDefinitionURL = 'absolute';
         }
-    };
-    FusionChartsService.prototype.getResolvedFusionChartsCore = function () {
-        return this.resolvedFusionChartsCore;
+        FusionChartsService.resolvedFusionChartsCore = resolvedCore;
     };
     FusionChartsService.prototype.newFusionChartsInstance = function (chartConfig) {
-        return new this.resolvedFusionChartsCore(chartConfig);
+        var resolvedFCCore = FusionChartsService.resolvedFusionChartsCore;
+        return new resolvedFCCore(chartConfig);
     };
     return FusionChartsService;
 }());
+FusionChartsService.resolvedFusionChartsCore = null;
 FusionChartsService.decorators = [
     { type: core.Injectable },
 ];
@@ -473,21 +476,10 @@ FusionChartsComponent.propDecorators = {
     'loadMessageImageScale': [{ type: core.Input },],
 };
 
-function provideFusionChartsCoreService(fusionChartsCore, fusionChartsModules) {
-    return [
-        {
-            provide: FusionChartsCoreService,
-            multi: false,
-            useValue: {
-                core: fusionChartsCore,
-                modules: fusionChartsModules
-            }
-        }
-    ];
-}
 var FusionChartsModule = (function () {
     function FusionChartsModule() {
     }
+    // Keep this method unchanged for backward compatible
     FusionChartsModule.forRoot = function (fusionChartsCore) {
         var fusionChartsModules = [];
         for (var _i = 1; _i < arguments.length; _i++) {
@@ -497,9 +489,22 @@ var FusionChartsModule = (function () {
             ngModule: FusionChartsModule,
             providers: [
                 FusionChartsService,
-                provideFusionChartsCoreService(fusionChartsCore, fusionChartsModules)
+                {
+                    provide: FusionChartsCoreService,
+                    useValue: {
+                        core: fusionChartsCore,
+                        modules: fusionChartsModules
+                    }
+                }
             ]
         };
+    };
+    FusionChartsModule.fcRoot = function (fusionChartsCore) {
+        var fusionChartsModules = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            fusionChartsModules[_i - 1] = arguments[_i];
+        }
+        FusionChartsService.resolveFusionChartsCore(fusionChartsCore, fusionChartsModules);
     };
     return FusionChartsModule;
 }());
@@ -510,6 +515,10 @@ FusionChartsModule.decorators = [
                 ],
                 exports: [
                     FusionChartsComponent
+                ],
+                providers: [
+                    FusionChartsService,
+                    FusionChartsCoreService
                 ]
             },] },
 ];
