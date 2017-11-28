@@ -1,6 +1,6 @@
 {
   "name": "angular4-fusioncharts",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0",
   "description": "A simple and lightweight Angular 4 component which provides bindings for FusionCharts JavaScript Charting Library",
   "license": "MIT",
   "repository": {
@@ -47,9 +47,11 @@
     "fusioncharts",
     "wrapper",
     "chart",
-    "angular2"
+    "angular2",
+    "angular5"
   ],
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "@angular/animations": "^4.2.4",
     "@angular/common": "^4.2.4",
     "@angular/compiler": "^4.2.4",
@@ -62,9 +64,7 @@
     "core-js": "^2.4.1",
     "fusioncharts": "^3.12.2",
     "rxjs": "^5.4.2",
-    "zone.js": "^0.8.14"
-  },
-  "devDependencies": {
+    "zone.js": "^0.8.14",
     "@angular/cli": "1.4.7",
     "@angular/compiler-cli": "^4.2.4",
     "@angular/language-service": "^4.2.4",
@@ -92,5 +92,8 @@
     "tslint": "~5.7.0",
     "typescript": "~2.3.3",
     "uglify-js": "^3.1.4"
+  },
+  "peerDependencies": {
+    "@angular/core": "^4.2.4"
   }
 }

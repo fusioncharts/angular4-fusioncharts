@@ -3,39 +3,42 @@ import { FusionChartsCoreService } from './fusioncharts.core.service';
 var FusionChartsService = (function () {
     function FusionChartsService(fusionChartsCoreService) {
         this.fusionChartsCoreService = fusionChartsCoreService;
-        this._resolveFusionChartsCore();
-    }
-    FusionChartsService.prototype._resolveFusionChartsCore = function () {
-        var _this = this;
-        if (this.resolvedFusionChartsCore) {
-            return;
+        if (!FusionChartsService.isFusionChartsCoreResolved()) {
+            FusionChartsService.resolveFusionChartsCore(fusionChartsCoreService.core, fusionChartsCoreService.modules);
         }
-        var core = this.fusionChartsCoreService.core;
-        var modules = this.fusionChartsCoreService.modules;
-        if (core.getCurrentRenderer && core.getCurrentRenderer() === 'javascript') {
-            this.resolvedFusionChartsCore = core;
+    }
+    FusionChartsService.getResolvedFusionChartsCore = function () {
+        return FusionChartsService.resolvedFusionChartsCore;
+    };
+    FusionChartsService.isFusionChartsCoreResolved = function () {
+        return !!FusionChartsService.resolvedFusionChartsCore;
+    };
+    FusionChartsService.resolveFusionChartsCore = function (core, modules) {
+        var resolvedCore;
+        if (core && core.getCurrentRenderer && core.getCurrentRenderer() === 'javascript') {
+            resolvedCore = core;
         }
         else {
             // Otherwise the core should be a factory that provides the fc core.
-            this.resolvedFusionChartsCore = core();
+            resolvedCore = core();
         }
         modules.forEach(function (module) {
-            module(_this.resolvedFusionChartsCore);
+            module(resolvedCore);
         });
         // Fix the black pie-chart rendering in Safari browser.
-        if (this.resolvedFusionChartsCore.options) {
-            this.resolvedFusionChartsCore.options.SVGDefinitionURL = 'absolute';
+        if (resolvedCore.options) {
+            resolvedCore.options.SVGDefinitionURL = 'absolute';
         }
-    };
-    FusionChartsService.prototype.getResolvedFusionChartsCore = function () {
-        return this.resolvedFusionChartsCore;
+        FusionChartsService.resolvedFusionChartsCore = resolvedCore;
     };
     FusionChartsService.prototype.newFusionChartsInstance = function (chartConfig) {
-        return new this.resolvedFusionChartsCore(chartConfig);
+        var resolvedFCCore = FusionChartsService.resolvedFusionChartsCore;
+        return new resolvedFCCore(chartConfig);
     };
     return FusionChartsService;
 }());
 export { FusionChartsService };
+FusionChartsService.resolvedFusionChartsCore = null;
 FusionChartsService.decorators = [
     { type: Injectable },
 ];

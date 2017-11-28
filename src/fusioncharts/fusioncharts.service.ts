@@ -4,40 +4,45 @@ import { FusionChartsCoreService } from './fusioncharts.core.service';
 
 @Injectable()
 export class FusionChartsService {
-    private resolvedFusionChartsCore: any;
+    private static resolvedFusionChartsCore: any = null;
 
-    constructor(private fusionChartsCoreService: FusionChartsCoreService) {
-        this._resolveFusionChartsCore();
+    public static getResolvedFusionChartsCore() {
+        return FusionChartsService.resolvedFusionChartsCore;
     }
 
-    _resolveFusionChartsCore() {
-        if (this.resolvedFusionChartsCore) { return; }
-        const core = this.fusionChartsCoreService.core;
-        const modules = this.fusionChartsCoreService.modules;
+    public static isFusionChartsCoreResolved() {
+        return !!FusionChartsService.resolvedFusionChartsCore;
+    }
 
-        if (core.getCurrentRenderer && core.getCurrentRenderer() === 'javascript') {
-            this.resolvedFusionChartsCore = core;
+    public static resolveFusionChartsCore(core: any, modules: any[]) {
+        let resolvedCore: any;
+        if (core && core.getCurrentRenderer && core.getCurrentRenderer() === 'javascript') {
+            resolvedCore = core;
         } else {
             // Otherwise the core should be a factory that provides the fc core.
-            this.resolvedFusionChartsCore = core();
+            resolvedCore = core();
         }
 
         modules.forEach((module) => {
-            module(this.resolvedFusionChartsCore);
+            module(resolvedCore);
         });
 
         // Fix the black pie-chart rendering in Safari browser.
-        if (this.resolvedFusionChartsCore.options) {
-            this.resolvedFusionChartsCore.options.SVGDefinitionURL = 'absolute';
+        if (resolvedCore.options) {
+            resolvedCore.options.SVGDefinitionURL = 'absolute';
+        }
+
+        FusionChartsService.resolvedFusionChartsCore = resolvedCore;
+    }
+
+    constructor(private fusionChartsCoreService: FusionChartsCoreService) {
+        if (!FusionChartsService.isFusionChartsCoreResolved()) {
+            FusionChartsService.resolveFusionChartsCore(fusionChartsCoreService.core, fusionChartsCoreService.modules);
         }
     }
 
-    getResolvedFusionChartsCore() {
-        return this.resolvedFusionChartsCore;
-    }
-
     newFusionChartsInstance(chartConfig: any) {
-        return new this.resolvedFusionChartsCore(chartConfig);
+        const resolvedFCCore = FusionChartsService.resolvedFusionChartsCore;
+        return new resolvedFCCore(chartConfig);
     }
-
 }
