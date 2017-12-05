@@ -1,6 +1,7 @@
 <div class="qs-section">
     <h3 class="qs-heading">
-        Step 1: Install the <span class="qs-highlight">angular4-fusioncharts</span> wrapper framework
+        Step 1: Install the
+        <span class="qs-highlight">angular4-fusioncharts</span> wrapper framework
     </h3>
     <p class="qs-text">
         In the terminal run the following command:
@@ -10,19 +11,29 @@
 
 <div class="qs-section">
     <h3 class="qs-heading">
-        Step 2: Import <span class="qs-highlight">angular4-fusioncharts</span> in the root <span class="qs-highlight">@NgModule</span>            
+        Step 2: Import
+        <span class="qs-highlight">angular4-fusioncharts</span> in the root
+        <span class="qs-highlight">@NgModule</span>
     </h3>
     <p class="qs-text">
-        In the root Angular <span class="qs-highlight">@NgModule</span> import <span class="qs-highlight">FusionChartsModule</span> from <span class="qs-highlight">angular4-fusioncharts</span> and add the <span class="qs-highlight">FusionChartsModule</span> as a dependency:           
+        In the root Angular
+        <span class="qs-highlight">@NgModule</span> import
+        <span class="qs-highlight">FusionChartsModule</span> from
+        <span class="qs-highlight">angular4-fusioncharts</span> and add the
+        <span class="qs-highlight">FusionChartsModule</span> as a dependency:
     </p>
     <pre class="qs-code"><code class="language-javascript">import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import * as FusionCharts from 'fusioncharts';
 import * as Charts from 'fusioncharts/fusioncharts.charts';
 import * as FintTheme from 'fusioncharts/themes/fusioncharts.theme.fint';
-
-import { AppComponent } from './app.component';
 import { FusionChartsModule } from 'angular4-fusioncharts';
+import { AppComponent } from './app.component';
+
+// Pass FusionCharts, Charts and FintTheme as dependencies.
+// You can also pass all other FusionCharts modules such as
+// PowerCharts, FusionMaps, Map Definitions, Widgets, Themes etc after FusionCharts.
+FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
 
 @NgModule({
     declarations: [
@@ -30,11 +41,8 @@ import { FusionChartsModule } from 'angular4-fusioncharts';
     ],
     imports: [
         BrowserModule,
-        // Specify FusionChartsModule as an import
-        // and pass FusionCharts, Charts and FintTheme as dependencies.
-        // You can also pass all other FusionCharts modules such as
-        // PowerCharts, FusionMaps, Map Definitions, Widgets, Themes etc after FusionCharts.
-        FusionChartsModule.forRoot(FusionCharts, Charts, FintTheme)
+        // Specify FusionChartsModule as import
+        FusionChartsModule
     ],
     providers: [],
     bootstrap: [AppComponent]
@@ -44,13 +52,17 @@ export class AppModule { }</code></pre>
 
 <div class="qs-section">
     <h3 class="qs-heading">
-        Step 3: Add the <span class="qs-highlight">fusioncharts</span> component
+        Step 3: Add the
+        <span class="qs-highlight">fusioncharts</span> component
     </h3>
     <p class="qs-text">
-        In the template, add <span class="qs-highlight">&lt;fusioncharts&gt;</span> component in the section where you wish to render the chart. We are assuming it's <span class="qs-highlight">AppComponent</span> which would change based on your usage.
+        In the template, add
+        <span class="qs-highlight">&lt;fusioncharts&gt;</span> component in the section where you wish to render the chart. We are assuming it's
+        <span class="qs-highlight">AppComponent</span> which would change based on your usage.
     </p>
     <p class="qs-text" style="margin-top: 10px;">
-        Add this in your Angular <span class="qs-highlight">AppComponent</span>:
+        Add this in your Angular
+        <span class="qs-highlight">AppComponent</span>:
     </p>
     <pre class="qs-code"><code class="language-javascript">import { Component } from '@angular/core';
 
@@ -100,10 +112,12 @@ export class AppComponent {
         }
     }
 }</code></pre>
-<p class="qs-text" style="margin-top: 10px;">
-    Use <span class="qs-highlight">&lt;fusioncharts&gt;</span> tag in your <span class="qs-highlight">app.component.html</span> template:
-</p>
-<pre class="qs-code"><code class="language-html">&lt;fusioncharts
+    <p class="qs-text" style="margin-top: 10px;">
+        Use
+        <span class="qs-highlight">&lt;fusioncharts&gt;</span> tag in your
+        <span class="qs-highlight">app.component.html</span> template:
+    </p>
+    <pre class="qs-code"><code class="language-html">&lt;fusioncharts
     [id]="id"
     [width]="width"
     [height]="height"
