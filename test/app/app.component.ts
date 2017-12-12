@@ -22,7 +22,7 @@ export class AppComponent {
             'containerBackgroundColor': '#ffffff'
         };
         this.dataFormat = 'jsonurl';
-        this.dataSource = 'assets/data.json';
+        this.dataSource = 'assets/drill-down-data.json';
         this.events = {
             dataplotRollOver: (eventObj, dataObj) => {
                 this.actualValue = dataObj.value;

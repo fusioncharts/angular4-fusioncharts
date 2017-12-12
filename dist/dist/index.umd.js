@@ -148,6 +148,24 @@ function isUndefined(value) {
 function deepCopyOf(obj) {
     return JSON.parse(JSON.stringify(obj));
 }
+/* tslint:disable: no-bitwise */
+var generateUUID = (function () {
+    var table = [];
+    for (var i = 0; i < 256; i++) {
+        table[i] = (i < 16 ? '0' : '') + (i).toString(16);
+    }
+    return function () {
+        var d0 = Math.random() * 0xffffffff | 0;
+        var d1 = Math.random() * 0xffffffff | 0;
+        var d2 = Math.random() * 0xffffffff | 0;
+        var d3 = Math.random() * 0xffffffff | 0;
+        return table[d0 & 0xff] + table[d0 >> 8 & 0xff] + table[d0 >> 16 & 0xff] + table[d0 >> 24 & 0xff] + '-' +
+            table[d1 & 0xff] + table[d1 >> 8 & 0xff] + '-' + table[d1 >> 16 & 0x0f | 0x40] + table[d1 >> 24 & 0xff] + '-' +
+            table[d2 & 0x3f | 0x80] + table[d2 >> 8 & 0xff] + '-' + table[d2 >> 16 & 0xff] + table[d2 >> 24 & 0xff] +
+            table[d3 & 0xff] + table[d3 >> 8 & 0xff] + table[d3 >> 16 & 0xff] + table[d3 >> 24 & 0xff];
+    };
+})();
+/* tslint:enable: no-bitwise */
 
 var FusionChartsComponent = (function () {
     function FusionChartsComponent(fusionChartsService, ngZone) {
@@ -344,6 +362,7 @@ var FusionChartsComponent = (function () {
         var _this = this;
         var currentOptions = this.getCurrentOptions();
         var chartObj = this.chartObj;
+        this.setChartContainerID(generateUUID());
         currentOptions.renderAt = this.chartContainer.nativeElement;
         if (chartObj && chartObj.dispose) {
             chartObj.dispose();
@@ -352,6 +371,9 @@ var FusionChartsComponent = (function () {
         this.runOutsideAngular(function () {
             _this.chartObj.render();
         });
+    };
+    FusionChartsComponent.prototype.setChartContainerID = function (id) {
+        this.chartContainer.nativeElement.setAttribute('id', id);
     };
     FusionChartsComponent.prototype.getCurrentOptions = function () {
         var _this = this;

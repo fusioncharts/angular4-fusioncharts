@@ -286,6 +286,7 @@ export class FusionChartsComponent implements OnInit, DoCheck, AfterViewInit, On
         const currentOptions = this.getCurrentOptions();
         const chartObj = this.chartObj;
 
+        this.setChartContainerID(utils.generateUUID());
         currentOptions.renderAt = this.chartContainer.nativeElement;
 
         if (chartObj && chartObj.dispose) { chartObj.dispose(); }
@@ -293,6 +294,10 @@ export class FusionChartsComponent implements OnInit, DoCheck, AfterViewInit, On
         this.runOutsideAngular(() => {
             this.chartObj.render();
         });
+    }
+
+    setChartContainerID(id) {
+        this.chartContainer.nativeElement.setAttribute('id', id);
     }
 
     getCurrentOptions(): any {

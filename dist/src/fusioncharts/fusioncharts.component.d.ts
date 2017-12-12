@@ -78,6 +78,7 @@ export declare class FusionChartsComponent implements OnInit, DoCheck, AfterView
     checkAndUpdateRestOptions(restOptions: any, currentOptions: any, oldOptions: any): void;
     isSameOptionValue(currValue: any, oldValue: any): boolean;
     renderChart(): void;
+    setChartContainerID(id: any): void;
     getCurrentOptions(): any;
     runOutsideAngular(fn: any): void;
 }

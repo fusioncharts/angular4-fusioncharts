@@ -197,6 +197,7 @@ var FusionChartsComponent = (function () {
         var _this = this;
         var currentOptions = this.getCurrentOptions();
         var chartObj = this.chartObj;
+        this.setChartContainerID(utils.generateUUID());
         currentOptions.renderAt = this.chartContainer.nativeElement;
         if (chartObj && chartObj.dispose) {
             chartObj.dispose();
@@ -205,6 +206,9 @@ var FusionChartsComponent = (function () {
         this.runOutsideAngular(function () {
             _this.chartObj.render();
         });
+    };
+    FusionChartsComponent.prototype.setChartContainerID = function (id) {
+        this.chartContainer.nativeElement.setAttribute('id', id);
     };
     FusionChartsComponent.prototype.getCurrentOptions = function () {
         var _this = this;
